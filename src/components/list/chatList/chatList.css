@@ -1,0 +1,99 @@
+.chatList{
+  flex: 1;
+  overflow: auto; /* Changed from scroll to auto so it only shows when needed */
+
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin; /* Possible values: auto, thin, none */
+  scrollbar-color: #6b6b6b #ffffff; /* Scrollbar thumb and track color */
+
+  /* WebKit-based browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #252525; /* Color of the scrollbar track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6b6b6b; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounds the corners of the scrollbar thumb */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Color of the scrollbar thumb on hover */
+  }
+
+  
+  .search{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    .searchBar{
+      flex: 1;
+      background-color: rgba(17, 25, 40, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-radius: 10px;
+      padding: 10px;
+
+      input{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        flex: 1;
+        color: white;
+      }
+
+      img{
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .add{
+      width: 36px;
+      height: 36px;
+      background-color: rgba(17, 25, 40, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+  }
+
+  .item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #dddddd35;
+    cursor: pointer;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .texts{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      span{
+        font-weight: 500;
+      }
+
+      p{
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}
