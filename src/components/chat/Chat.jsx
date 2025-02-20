@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Chat.css";
 import EmojiPicker from "emoji-picker-react";
 
 const Chat = () => {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
+
+  const endRef = useRef(null);
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
 
   const handleEmoji = (e) => {
     setText((prev) => prev + e.emoji)
@@ -33,19 +39,6 @@ const Chat = () => {
       <div className="center">
         <div className="message">
           <img src="./avatar.png" alt="" />
-          <div className="texts"> 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, nemo neque quasi deleniti eos consequuntur! Culpa in doloremque omnis aliquam error ad illo, numquam asperiores ab laboriosam expedita accusamus molestiae.</p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message own">
-          <div className="texts">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, nemo neque quasi deleniti eos consequuntur! Culpa in doloremque omnis aliquam error ad illo, numquam asperiores ab laboriosam expedita accusamus molestiae.</p>
-            <span>1 min ago</span>
-          </div>
-        </div>
-        <div className="message">
-          <img src="./avatar.png" alt="" />
           <div className="texts">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, nemo neque quasi deleniti eos consequuntur! Culpa in doloremque omnis aliquam error ad illo, numquam asperiores ab laboriosam expedita accusamus molestiae.</p>
             <span>1 min ago</span>
@@ -83,6 +76,21 @@ const Chat = () => {
             <span>1 min ago</span>
           </div>
         </div>
+        <div className="message">
+          <img src="./avatar.png" alt="" />
+          <div className="texts">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, nemo neque quasi deleniti eos consequuntur! Culpa in doloremque omnis aliquam error ad illo, numquam asperiores ab laboriosam expedita accusamus molestiae.</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="message own">
+          <div className="texts">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo, nemo neque quasi deleniti eos consequuntur! Culpa in doloremque omnis aliquam error ad illo, numquam asperiores ab laboriosam expedita accusamus molestiae.</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        {/* use ref hook */}
+        <div ref={endRef}></div>
       </div>
 
       <div className="bottom">

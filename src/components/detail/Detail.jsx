@@ -43,13 +43,13 @@ const Detail = () => {
               </div>
               <img src="./download.png" alt="" className="icon" />
             </div>
-            <div className="photoItem">
+            {/* <div className="photoItem">
               <div className="photoDetail">
                 <img src="https://images.pexels.com/photos/30453693/pexels-photo-30453693/free-photo-of-traditional-japanese-paper-lanterns-displayed-outdoors.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load" alt="" />
                 <span>photo_2025_2.png</span>
               </div>
               <img src="./download.png" alt="" className="icon" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="option">
@@ -59,6 +59,7 @@ const Detail = () => {
           </div>
         </div>
         <button>Block User</button>
+        <button className="logout">Logout</button>
       </div>
     </div>
   )
